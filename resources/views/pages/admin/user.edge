@@ -1,0 +1,47 @@
+@layouts.main()
+  @slot('title')
+    daftar user
+  @endslot
+
+  @slot('body')
+    @if(flashMessages.has('status'))
+      <div class="text-green-800 font-bold">
+          {{flashMessages.get('status')}}
+      </div>
+      @elseif(flashMessages.has('error'))
+      <div class="text-red-800 font-bold">
+          {{flashMessages.get('error')}}
+      </div>
+    @endif
+    
+    <h1 class="text-2xl font-bold text-neutral-800">List User</h1>
+    {{--  make table for get user  --}}
+    <table class="table-auto w-full">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">No</th>
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Email</th>
+          <th class="px-4 py-2">Role</th>
+          <th class="px-4 py-2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @each( item in users)
+          <tr>
+            <td class="border px-4 py-2">{{item.id}}</td>
+            <td class="border px-4 py-2">{{item.fullName}}</td>
+            <td class="border px-4 py-2">{{item.email}}</td>
+            <td class="border px-4 py-2">{{item.role.name}}</td>
+            <td class="border px-4 py-2">
+              <a href="{{route('user.show', {id: item.id})}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+              <form class="mt-5" method="POST" action="{{ route('user.destroy', {id: item.id}, { qs: { _method: 'DELETE' } }) }}">
+                {{csrfField()}}
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+              </form>
+            </td>
+          </tr>
+        @endeach
+      </tbody>
+  @endslot
+@end

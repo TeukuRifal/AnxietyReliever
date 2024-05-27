@@ -1,0 +1,23 @@
+@layouts.main()
+    @slot('title')
+       Home
+    @endslot
+
+    @slot('body')
+    <div class="container flex h-screen bg-cover bg-center" style="background-image: url('{{ asset('resources/images/rifalsiluet.jpg') }}');"">
+      <div class="jumbotron  my-48 ml-2 p-5 "> 
+        <div class="text-4xl font-serif font-extrabold ">
+          <p> Selamat datang di web Biodata 
+            <p>AnxietyRelief </p>
+          </div>
+          <p>Kami adalah platform yang didedikasikan untuk mendukung siswa sekolah seperti kamu<p>dalam menghadapi tantangan kesehatan mental,khususnya kecemasan. Kami memahami <p></p>bahwa kehidupan sekolah dapat menimbulkan tekanan dan perasaan cemas.</p> Kami di sini untuk membantumu mengelola kecemasan dan menjaga kesehatan mentalmu.</h6>
+          <div class="  w-52 bg-blue-300 p-3 flex-wrap text-center rounded-full my-4">
+             <p><span class="  bg-blue-950 p-2 rounded-full text-white font-bold px-3 shadow-md"><a href="{{ route('/about') }}">SEE MORE</a></span>Get Started</p>
+          </div>
+  
+      </div>
+  
+    </div>
+       
+    @endslot
+@end
