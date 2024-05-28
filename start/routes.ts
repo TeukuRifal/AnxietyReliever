@@ -11,10 +11,12 @@ router.get('/beranda', [PagesController, 'beranda'])
 
 
 router.get('/', [PagesController, 'beranda'])
+router.get('/anxiety', [PagesController, 'anxiety'])
 router.get('/about', [PagesController, 'about'])
 router.get('/quiz', [PagesController, 'quiz'])
 router.get('/question', [PagesController, 'question'])
 router.get('/crud', [PagesController, 'crud'])
+
 
 
 

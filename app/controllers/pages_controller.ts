@@ -15,6 +15,10 @@ export default class PagesController {
     return view.render('pages/quiz')
   }
 
+  async anxiety({ view }: HttpContext) {
+    return view.render('pages/anxiety')
+  }
+
   async question({ view }: HttpContext) {
     return view.render('pages/question')
   }

@@ -3,24 +3,34 @@
     @endslot
 
     @slot('body')
-        <div class="container my-48 mx-auto p-8 shadow-md">
-            <h1 class="text-3xl font-bold text-center mb-6">Quiz Tingkat Kecemasan</h1>
-            <div id="quiz-container">
-                <div id="question" class="text-xl text-center mb-4 font-serif"></div>
-                <div id="options" class="flex justify-center space-x-4 mb-4"></div>
+        <!-- Tambahkan link CSS AOS di sini -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+        <div class="container my-48 mx-auto p-8">
+            <h1 class="text-4xl font-bold text-center mb-6" data-aos="fade-up">Quiz Tingkat Kecemasan</h1>
+            <div id="quiz-container" class= p-6 rounded-lg shadow-lg" data-aos="fade-up">
+                <div id="question" class="text-2xl text-center mb-4 font-serif"></div>
+                <div id="options" class="flex flex-wrap justify-center space-x-4 mb-4"></div>
                 <div id="popup" class="popup hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                    <div class="bg-white text-black p-4 rounded shadow-lg">
+                    <div class="bg-black text-black p-4 rounded shadow-lg">
                         <div class="popup-message"></div>
                     </div>
                 </div>
             </div>
-            <div id="result-container" class="hidden max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
-                <div id="resultMessage" class="result-message text-2xl font-bold text-center py-4"></div>
-                <div id="advice" class="text-lg font-semibold text-center mt-4"></div>
+            <div id="result-container" class="hidden max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md mt-8" data-aos="fade-up">
+                <div id="resultMessage" class="result-message text-3xl font-bold text-center py-4"></div>
+                <div id="advice" class="text-xl font-semibold text-center mt-4"></div>
+                <button id="tryAgainButton" class="mt-6 px-4 py-2 bg-white text-black rounded-lg shadow-md hover:bg-blue-700 transition transform hover:scale-105">
+                    Try Again
+                </button>
             </div>
         </div>
 
+        <!-- Tambahkan link JavaScript AOS di sini, sebelum penutup tag </body> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
         <script>
+            AOS.init();
+
             let questions = [];
             let currentQuestionIndex = 0;
             let score = 0;
@@ -32,6 +42,7 @@
             const resultContainer = document.getElementById('result-container');
             const resultMessage = document.getElementById('resultMessage');
             const adviceContainer = document.getElementById('advice');
+            const tryAgainButton = document.getElementById('tryAgainButton');
 
             async function fetchQuestions() {
                 try {
@@ -53,8 +64,9 @@
                 currentQuestion.options.forEach((option, index) => {
                     const button = document.createElement('button');
                     button.textContent = option.text;
-                    button.classList.add('px-4', 'py-2', 'rounded', 'my-2', 'shadow-md', 'hover:bg-blue-700');
+                    button.classList.add('px-4', 'py-2', 'rounded', 'my-2', 'shadow-md', 'transition', 'transform', 'hover:scale-105', 'hover:shadow-lg');
                     button.style.backgroundColor = getButtonColor(option.points);
+                    button.style.color = 'black';
                     optionsElement.appendChild(button);
                     button.addEventListener('click', () => {
                         addPoints(option.points);
@@ -64,11 +76,11 @@
 
             function getButtonColor(points) {
                 switch (points) {
-                    case 0: return "green";
-                    case 1: return "white";
-                    case 2: return "yellow";
-                    case 3: return "red";
-                    default: return "blue";
+                    case 0: return "bg-green-500";
+                    case 1: return "bg-gray-500";
+                    case 2: return "bg-yellow-500";
+                    case 3: return "bg-red-500";
+                    default: return "bg-blue-500";
                 }
             }
 
@@ -108,6 +120,16 @@
                     adviceContainer.textContent = "Saran: Segera konsultasikan dengan ahli kesehatan mental atau psikolog.";
                 }
             }
+
+            function resetQuiz() {
+                currentQuestionIndex = 0;
+                score = 0;
+                quizContainer.classList.remove('hidden');
+                resultContainer.classList.add('hidden');
+                showQuestion();
+            }
+
+            tryAgainButton.addEventListener('click', resetQuiz);
 
             // Initial question fetch
             fetchQuestions();

@@ -1,9 +1,28 @@
 @layouts.main()
+
     @slot('title')
-        About
+        <div style="display: flex; justify-content: center; align-items: center; font-size: 40px; font-weight: bold; margin-top: 20px;">
+            About Us
+        </div>
     @endslot
 
+
     @slot('body')
-        <a class="text-2xl font-bold underline decoration-sky-200 text-gray-600" href="{{route('/beranda')}}">Pergi ke halaman Home</a>
+        <div class="container mx-auto px-4 py-8">
+            <div class="about-section bg-white bg-opacity-80 rounded-lg p-6 mb-8">
+                <h2 class="text-xl font-bold mb-4">Misi Kami</h2>
+                <p class="text-base">Misi kami adalah mendukung siswa dalam perjalanan mereka untuk mengelola kecemasan dan kesehatan mental secara efektif. Kami berkomitmen untuk menyediakan akses mudah ke informasi, alat praktis, dan komunitas yang mendukung sehingga kamu dapat menjalani kehidupan sekolah dengan lebih baik dan lebih percaya diri.</p>
+            </div>
+            <div class="about-section bg-white bg-opacity-80 rounded-lg p-6 mb-8">
+                <h2 class="text-xl font-bold mb-4">Mengapa Memilih AnxietyReliever?</h2>
+                <p class="text-base">Aman dan Terpercaya: Informasi kami didasarkan pada penelitian dan sumber daya terpercaya.</p>
+                <p class="text-base">Ramah Siswa: Konten kami dirancang dengan bahasa yang mudah dipahami dan sesuai dengan pengalaman siswa.</p>
+                <p class="text-base">Privasi Terjaga: Kami menghormati privasimu dan menjamin kerahasiaan data.</p>
+            </div>
+            <img class="w-full max-w-lg mx-auto rounded-lg mb-8" src="https://img.freepik.com/premium-vector/emotional-balance-concept-man-develops-his-emotional-intelligence-definition-mood-consciousness_118813-19246.jpg?w=996" alt="Gambar Misi Kami">
+        </div>
+
+    
     @endslot
+
 @end

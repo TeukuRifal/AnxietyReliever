@@ -62,8 +62,10 @@
     "@adonisjs/shield": "^8.1.1",
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^2.0.2",
+    "@types/got": "^9.6.12",
     "@vinejs/vine": "^2.0.0",
     "edge.js": "^6.0.2",
+    "got": "^14.3.0",
     "luxon": "^3.4.4",
     "mysql2": "^3.9.7",
     "reflect-metadata": "^0.2.2"
