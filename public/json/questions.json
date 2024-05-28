@@ -1,0 +1,101 @@
+[
+    {
+        "question": "Seberapa sering Anda merasa cemas?",
+        "options": [
+            {"text": "Tidak pernah", "points": 0},
+            {"text": "Terkadang", "points": 1},
+            {"text": "Pernah", "points": 2},
+            {"text": "Sering", "points": 3}
+        ]
+    },
+    {
+        "question": "Bagaimana Anda merasa setelah meraih hasil yang kurang dari yang diharapkan?",
+        "options": [
+            {"text": "Tidak pernah", "points": 0},
+            {"text": "Terkadang", "points": 1},
+            {"text": "Pernah", "points": 2},
+            {"text": "Sering", "points": 3}
+        ]
+    },
+    {
+        "question": "Seberapa sering Anda merasa kesulitan untuk tidur karena pikiran yang terus menerus?",
+        "options": [
+            {"text": "Tidak pernah", "points": 0},
+            {"text": "Terkadang", "points": 1},
+            {"text": "Pernah", "points": 2},
+            {"text": "Sering", "points": 3}
+        ]
+    },
+    {
+        "question": "Seberapa sering Anda merasa mudah marah atau iritasi tanpa alasan yang jelas?",
+        "options": [
+            {"text": "Tidak pernah", "points": 0},
+            {"text": "Terkadang", "points": 1},
+            {"text": "Pernah", "points": 2},
+            {"text": "Sering", "points": 3}
+        ]
+    },
+    {
+        "question": "Seberapa sering Anda merasa sulit berkonsentrasi atau fokus pada suatu hal?",
+        "options": [
+            {"text": "Tidak pernah", "points": 0},
+            {"text": "Terkadang", "points": 1},
+            {"text": "Pernah", "points": 2},
+            {"text": "Sering", "points": 3}
+        ]
+    },
+    {
+        "question": "Seberapa sering Anda merasa sulit bernafas atau sesak napas?",
+        "options": [
+            {"text": "Tidak pernah", "points": 0},
+            {"text": "Terkadang", "points": 1},
+            {"text": "Pernah", "points": 2},
+            {"text": "Sering", "points": 3}
+        ]
+    },
+    {
+        "question": "Seberapa sering Anda merasa lelah atau kurang bersemangat untuk melakukan aktivitas?",
+        "options": [
+            {"text": "Tidak pernah", "points": 0},
+            {"text": "Terkadang", "points": 1},
+            {"text": "Pernah", "points": 2},
+            {"text": "Sering", "points": 3}
+        ]
+    },
+    {
+        "question": "Seberapa sering Anda merasa gelisah atau gugup?",
+        "options": [
+            {"text": "Tidak pernah", "points": 0},
+            {"text": "Terkadang", "points": 1},
+            {"text": "Pernah", "points": 2},
+            {"text": "Sering", "points": 3}
+        ]
+    },
+        {
+            "question": "Seberapa sering Anda merasa putus asa atau kehilangan harapan?",
+            "options": [
+                {"text": "Tidak pernah", "points": 0},
+                {"text": "Terkadang", "points": 1},
+                {"text": "Pernah", "points": 2},
+                {"text": "Sering", "points": 3}
+            ]
+        },
+        {
+            "question": "Seberapa sering Anda mengalami perubahan berat badan yang tidak diinginkan karena kecemasan?",
+            "options": [
+                {"text": "Tidak pernah", "points": 0},
+                {"text": "Terkadang", "points": 1},
+                {"text": "Pernah", "points": 2},
+                {"text": "Sering", "points": 3}
+            ]
+        },
+        {
+            "question": "Seberapa sering Anda menghindari situasi sosial atau interaksi dengan orang lain karena kecemasan?",
+            "options": [
+                {"text": "Tidak pernah", "points": 0},
+                {"text": "Terkadang", "points": 1},
+                {"text": "Pernah", "points": 2},
+                {"text": "Sering", "points": 3}
+            ]
+        }
+    ]

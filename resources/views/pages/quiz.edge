@@ -1,9 +1,116 @@
 @layouts.main()
     @slot('title')
-        Quiz
     @endslot
 
     @slot('body')
-        <a class="text-2xl font-bold underline decoration-sky-200 text-gray-600" href="{{route('/beranda')}}">Pergi ke halaman Home</a>
+        <div class="container my-48 mx-auto p-8 shadow-md">
+            <h1 class="text-3xl font-bold text-center mb-6">Quiz Tingkat Kecemasan</h1>
+            <div id="quiz-container">
+                <div id="question" class="text-xl text-center mb-4 font-serif"></div>
+                <div id="options" class="flex justify-center space-x-4 mb-4"></div>
+                <div id="popup" class="popup hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div class="bg-white text-black p-4 rounded shadow-lg">
+                        <div class="popup-message"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="result-container" class="hidden max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+                <div id="resultMessage" class="result-message text-2xl font-bold text-center py-4"></div>
+                <div id="advice" class="text-lg font-semibold text-center mt-4"></div>
+            </div>
+        </div>
+
+        <script>
+            let questions = [];
+            let currentQuestionIndex = 0;
+            let score = 0;
+
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+            const popup = document.getElementById('popup');
+            const quizContainer = document.getElementById('quiz-container');
+            const resultContainer = document.getElementById('result-container');
+            const resultMessage = document.getElementById('resultMessage');
+            const adviceContainer = document.getElementById('advice');
+
+            async function fetchQuestions() {
+                try {
+                    const response = await fetch('/json/questions.json');
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    questions = await response.json();
+                    showQuestion();
+                } catch (error) {
+                    console.error('There has been a problem with your fetch operation:', error);
+                }
+            }
+
+            function showQuestion() {
+                const currentQuestion = questions[currentQuestionIndex];
+                questionElement.textContent = currentQuestion.question;
+                optionsElement.innerHTML = '';
+                currentQuestion.options.forEach((option, index) => {
+                    const button = document.createElement('button');
+                    button.textContent = option.text;
+                    button.classList.add('px-4', 'py-2', 'rounded', 'my-2', 'shadow-md', 'hover:bg-blue-700');
+                    button.style.backgroundColor = getButtonColor(option.points);
+                    optionsElement.appendChild(button);
+                    button.addEventListener('click', () => {
+                        addPoints(option.points);
+                    });
+                });
+            }
+
+            function getButtonColor(points) {
+                switch (points) {
+                    case 0: return "green";
+                    case 1: return "white";
+                    case 2: return "yellow";
+                    case 3: return "red";
+                    default: return "blue";
+                }
+            }
+
+            function addPoints(points) {
+                score += points;
+                nextQuestion();
+            }
+
+            function nextQuestion() {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            }
+
+            function showResult() {
+                quizContainer.classList.add('hidden');
+                resultContainer.classList.remove('hidden');
+                if (score <= 14) {
+                    resultContainer.style.backgroundColor = "green";
+                    resultMessage.textContent = "Tingkat kecemasan rendah.";
+                    resultMessage.style.color = "white";
+                    adviceContainer.style.color = "white";
+                    adviceContainer.textContent = "Saran: Tetap pertahankan pola hidup sehat dan berpikir positif.";
+                } else if (score >= 15 && score <= 25) {
+                    resultContainer.style.backgroundColor = "yellow";
+                    resultMessage.textContent = "Tingkat kecemasan sedang.";
+                    resultMessage.style.color = "black";
+                    adviceContainer.textContent = "Saran: Coba lakukan relaksasi, olahraga, atau hobi yang menyenangkan.";
+                } else {
+                    resultContainer.style.backgroundColor = "red";
+                    resultMessage.textContent = "Tingkat kecemasan tinggi.";
+                    adviceContainer.style.color = "white";
+                    resultMessage.style.color = "white";
+                    adviceContainer.textContent = "Saran: Segera konsultasikan dengan ahli kesehatan mental atau psikolog.";
+                }
+            }
+
+            // Initial question fetch
+            fetchQuestions();
+        </script>
     @endslot
 @end
