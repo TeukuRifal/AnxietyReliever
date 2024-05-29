@@ -1,19 +1,24 @@
 @layouts.main()
     @slot('title')
-        
+        <!-- Slot ini digunakan untuk judul halaman, namun dibiarkan kosong saat ini -->
     @endslot
 
     @slot('body')
+        <!-- Kontainer utama untuk isi halaman -->
         <div class="container mx-auto p-8">
+            <!-- Judul halaman Q&A -->
             <h1 class="text-3xl font-bold text-center mb-6">Q&A Page</h1>
             
+            <!-- Div yang akan menampung pertanyaan dan jawaban -->
             <div id="questions" class="space-y-6">
-                <!-- Questions and answers will be appended here by JavaScript -->
+                <!-- Pertanyaan dan jawaban akan ditambahkan di sini oleh JavaScript -->
             </div>
         </div>
 
         <script>
+            // Menunggu hingga DOM selesai dimuat
             document.addEventListener("DOMContentLoaded", () => {
+                // Data pertanyaan dan jawaban
                 const questions = [
                     {
                         user: "Apakah saya bisa mengatasi kecemasan tanpa obat?",
@@ -57,8 +62,10 @@
                     }
                 ];
 
+                // Mendapatkan elemen kontainer pertanyaan
                 const questionsContainer = document.getElementById('questions');
                 
+                // Menambahkan setiap pertanyaan dan jawaban ke dalam kontainer
                 questions.forEach(q => {
                     const questionDiv = document.createElement('div');
                     questionDiv.classList.add('bg-white', 'p-6', 'rounded-lg', 'shadow-md', 'transition', 'transform', 'hover:scale-105', 'hover:shadow-lg');
