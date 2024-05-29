@@ -1,3 +1,7 @@
+# AnxietyRelief
+
+![web](https://i.ibb.co.com/7kBWGPX/anxiety-Reliever.png)
+
 # Platform Dukungan Kesehatan Mental untuk Siswa
 
 Selamat datang di platform kami yang didedikasikan untuk mendukung siswa sekolah seperti kamu dalam menghadapi tantangan kesehatan mental, khususnya kecemasan. Kami memahami bahwa kehidupan sekolah dapat menimbulkan tekanan dan perasaan cemas. Kami di sini untuk membantumu mengelola kecemasan dan menjaga kesehatan mentalmu.
@@ -15,8 +19,7 @@ Selamat datang di platform kami yang didedikasikan untuk mendukung siswa sekolah
 1. **Ikuti Kuis**: Jawab 10 pertanyaan yang menilai berbagai aspek kecemasanmu.
 2. **Dapatkan Hasilmu**: Terima hasil tingkat kecemasanmu secara instan yang dikategorikan sebagai rendah, sedang, atau tinggi.
 3. **Terima Saran yang Dipersonalisasi**: Berdasarkan tingkat kecemasanmu, dapatkan saran dan sumber daya spesifik untuk membantu mengelola perasaanmu.
-4. **Jelajahi Sumber Daya**: Telusuri daftar artikel, video, dan aktivitas yang dikurasi untuk mendukung perjalanan kesehatan mentalmu.
-5. **Bergabung dengan Komunitas**: Berinteraksi dengan siswa lain, berbagi pengalaman, dan temukan kenyamanan dalam mengetahui bahwa kamu tidak sendirian.
+4. **Bergabung dengan Komunitas**: Berinteraksi dengan siswa lain, berbagi pengalaman, dan temukan kenyamanan dalam mengetahui bahwa kamu tidak sendirian.
 
 ## Tingkat Kecemasan dan Saran
 
@@ -92,3 +95,5 @@ Untuk mulai menggunakan platform kami, ikuti langkah-langkah berikut:
 
 Jika kamu menemui masalah atau memiliki pertanyaan, jangan ragu untuk membuka isu di repositori ini atau hubungi kami di trifalaulia@gmail.com
 
+
+Kami berharap platform ini menjadi sumber daya yang berharga bagimu dalam mengelola kecemasan dan menjaga kesehatan mentalmu. Ingat, kamu tidak sendirian, dan kami di sini untuk mendukungmu setiap langkah.
