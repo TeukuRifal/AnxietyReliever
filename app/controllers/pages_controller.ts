@@ -1,5 +1,3 @@
-import Role from '#models/role'
-import User from '#models/user'
 import { HttpContext } from '@adonisjs/core/http'
 
 export default class PagesController {
@@ -23,8 +21,4 @@ export default class PagesController {
     return view.render('pages/question')
   }
 
-  async crud({ view }: HttpContext) {
-    const roles = await Role.all()
-    return view.render('pages/auth/register', { roles: roles })
-  }
 }
